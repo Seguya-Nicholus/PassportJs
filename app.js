@@ -1,11 +1,17 @@
 // Require Packages
 const express = require('express')
 
+
 // Create our Express Application
 const app = express();
 
 // Set view Engine
 app.set('view engine','ejs');
+
+
+// Importing of Routes
+const auth_Routes = require("./routes/authRoutes"); 
+app.use('/auth', auth_Routes);
 
 
 // Creating the Home Route
