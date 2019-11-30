@@ -11,7 +11,9 @@ app.set('view engine','ejs');
 
 // Importing of Routes
 const auth_Routes = require("./routes/authRoutes"); 
+const passportSetup = require('./config/passport-setup')
 app.use('/auth', auth_Routes);
+
 
 
 // Creating the Home Route
