@@ -1,5 +1,7 @@
 // Require Packages
 const express = require('express')
+const mongoose = require('mongoose')
+const keys = require('./config/keys')
 
 
 // Create our Express Application
@@ -7,6 +9,11 @@ const app = express();
 
 // Set view Engine
 app.set('view engine','ejs');
+
+// Connect to mongodb
+mongoose.connect(keys.mongodb.dbURI, () =>{
+    console.log('Database Connection Successful');
+})
 
 
 // Importing of Routes
